@@ -1,16 +1,32 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Badge from '../components/Badge.astro';
+import Badge from '@components/Badge.astro';
+import GitHub from '@components/icons/GitHub.astro';
+import Csharp from '@components/icons/Csharp.astro';
+import ReactIcon from '@components/icons/React.astro';
+import SocialPill from '@components/SocialPill.astro';
 ---
 
 <Layout title="612 Soft">
 	<main>
 		<section class="w-full lg:w-[740px] mx-auto py-44">
-		<h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-4">Welcome to 612 Soft<div class="flex justify-center items-center"><Badge>Working on it!</Badge></div></h1>
-		<h2 class="text-xl">Custom Web and Software Solutions. Astro looks for .astro or .md files in the src/pages/ directory. Each page is exposed as a route based on its file name.
-			There's nothing special about src/components/, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-			Any static assets, like images, can be placed in the public/ directory.</h2>
+		<h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-10">Welcome to 612 Soft<a href="https://x.com/@612Soft" class="flex justify-center items-center"><Badge>Working on it!</Badge></a></h1>
+		<h2 class="text-2xl opacity-80">Custom Web and Software Solutions.</h2>
+		<ul class="flex gap-x-2 mt-4">
+			<SocialPill href="https://github.com/vik-012/612Soft">
+				<GitHub class="w-6 h-6"></GitHub>
+				GitHub
+			</SocialPill>
+			<SocialPill href="https://dotnet.microsoft.com/es-es/languages/csharp">
+				<Csharp class="w-6 h-6"></Csharp>
+				C#
+			</SocialPill>
+			<SocialPill href="https://react.dev/learn/typescript">
+				<ReactIcon class="w-6 h-6"></ReactIcon>
+				React
+			</SocialPill>
+		</ul>
+		</ul>
 	</section>
 	</main>
 </Layout>
