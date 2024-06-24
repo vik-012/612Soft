@@ -1,0 +1,58 @@
+---
+const items = [
+    {
+        date: format(new Date(), "yyyy-MM-dd"),
+        title: 'Application UI code in Tailwind CSS',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
+        link: '#',
+    },
+    {
+        date: format(new Date(), "yyyy-MM-dd"),
+        title: 'Design System in Figma',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+    },
+    {
+        date: format(new Date(), "yyyy-MM-dd"),
+        title: 'Design System in Figma',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+    },
+    {
+        date: format(new Date(), "yyyy-MM-dd"),
+        title: 'Design System in Figma',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+    },
+    {
+        date: format(new Date(), "yyyy-MM-dd"),
+        title: 'Design System in Figma',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+    },
+    {
+        date: format(new Date(), "yyyy-MM-dd"),
+        title: 'Design System in Figma',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+    },
+    {
+        date: format(new Date(), "yyyy-MM-dd"),
+        title: 'Design System in Figma',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+    },
+    {
+        date: format(new Date(), "yyyy-MM-dd"),
+        title: 'Design System in Figma',
+        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
+    }]
+    
+import TimelineItem from './TimelineItem.astro'
+import {format} from 'date-fns'
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700">
+    {
+     items.map((item, index) => (
+     <li class="mb-10 ms-4">
+        <TimelineItem {...item} />
+    </li>))
+    }
+    <li class="mb-10 ms-4">        
+    </li>
+</ol>
+

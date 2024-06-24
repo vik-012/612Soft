@@ -1,32 +1,43 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '@components/Badge.astro';
-import GitHub from '@components/icons/GitHub.astro';
-import Csharp from '@components/icons/Csharp.astro';
-import ReactIcon from '@components/icons/React.astro';
-import SocialPill from '@components/SocialPill.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "@components/Badge.astro";
+import GitHub from "@components/icons/GitHub.astro";
+import Csharp from "@components/icons/Csharp.astro";
+import ReactIcon from "@components/icons/React.astro";
+import SocialPill from "@components/SocialPill.astro";
+import Timeline from "@components/Timeline.astro";
 ---
 
-<Layout title="612 Soft">
-	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
-		<h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-10">Welcome to 612 Soft<a href="https://x.com/@612Soft" class="flex justify-center items-center"><Badge>Working on it!</Badge></a></h1>
-		<h2 class="text-2xl opacity-80">Custom Web and Software Solutions.</h2>
-		<ul class="flex gap-x-2 mt-4">
-			<SocialPill href="https://github.com/vik-012/612Soft">
-				<GitHub class="w-6 h-6"></GitHub>
-				GitHub
-			</SocialPill>
-			<SocialPill href="https://dotnet.microsoft.com/es-es/languages/csharp">
-				<Csharp class="w-6 h-6"></Csharp>
-				C#
-			</SocialPill>
-			<SocialPill href="https://react.dev/learn/typescript">
-				<ReactIcon class="w-6 h-6"></ReactIcon>
-				React
-			</SocialPill>
-		</ul>
-		</ul>
-	</section>
-	</main>
+<Layout
+  title="612 Soft - Web development"
+  description="Choose us to develop a professional custom page for you."
+>
+  <main>
+    <section class="w-full lg:w-[740px] mx-auto py-44">
+      <h1 class="text-5xl font-bold flex flex-row gap-x-4 pb-10">
+        Welcome to 612 Soft<a
+          href="https://x.com/@612Soft"
+          class="flex justify-center items-center"
+          ><Badge>Working on it!</Badge></a> 
+      </h1>
+      <h2 class="text-2xl opacity-80">Custom Web and Software Solutions.</h2>
+      <ul class="flex gap-x-2 mt-4">
+        <SocialPill href="https://github.com/vik-012/612Soft">
+          <GitHub class="size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="https://dotnet.microsoft.com/es-es/languages/csharp">
+          <Csharp class="size-6" />
+          C#
+        </SocialPill>
+        <SocialPill href="https://react.dev/learn/typescript">
+          <ReactIcon class="size-6" />
+          React
+        </SocialPill>
+      </ul>
+    </section>
+  </main>
+  <section>
+	<Timeline></Timeline>
+  </section>
 </Layout>
