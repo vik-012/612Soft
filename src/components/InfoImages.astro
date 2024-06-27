@@ -1,0 +1,26 @@
+---
+const infoImages = [{
+    title: "Info 1",
+    description: "Description 1",
+    image: "https://via.placeholder.com/150",
+    link: "https://www.google.com"
+},
+{
+    title: "Info 2",
+    description: "Description 2",
+    image: "https://via.placeholder.com/150",
+    link: "https://www.google.com"
+}]
+---
+{
+    infoImages.map((info, index) => {
+        return (
+            <div>
+                <h1>{info.title}</h1>
+                <p>{info.description}</p>
+                <img src={info.image} alt={info.title} />
+                <a href={info.link}>Link</a>
+            </div>
+        )
+    })
+}

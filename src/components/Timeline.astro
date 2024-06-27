@@ -1,4 +1,5 @@
 ---
+var date = new Date()
 const items = [
     {
         date: format(new Date(), "yyyy-MM-dd"),
@@ -7,37 +8,37 @@ const items = [
         link: '#',
     },
     {
-        date: format(new Date(), "yyyy-MM-dd"),
+        date: format(date.setDate(date.getDate() - 1), "yyyy-MM-dd"),
         title: 'Design System in Figma',
         description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
     },
     {
-        date: format(new Date(), "yyyy-MM-dd"),
+        date: format(date.setDate(date.getDate() - 2), "yyyy-MM-dd"),
         title: 'Design System in Figma',
         description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
     },
     {
-        date: format(new Date(), "yyyy-MM-dd"),
+        date: format(date.setDate(date.getDate() - 3), "yyyy-MM-dd"),
         title: 'Design System in Figma',
         description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
     },
     {
-        date: format(new Date(), "yyyy-MM-dd"),
+        date: format(date.setDate(date.getDate() - 4), "yyyy-MM-dd"),
         title: 'Design System in Figma',
         description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
     },
     {
-        date: format(new Date(), "yyyy-MM-dd"),
+        date: format(date.setDate(date.getDate() - 5), "yyyy-MM-dd"),
         title: 'Design System in Figma',
         description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
     },
     {
-        date: format(new Date(), "yyyy-MM-dd"),
+        date: format(date.setDate(date.getDate() - 6), "yyyy-MM-dd"),
         title: 'Design System in Figma',
         description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
     },
     {
-        date: format(new Date(), "yyyy-MM-dd"),
+        date: format(date.setDate(date.getDate() - 7), "yyyy-MM-dd"),
         title: 'Design System in Figma',
         description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
     }]
@@ -45,7 +46,7 @@ const items = [
 import TimelineItem from './TimelineItem.astro'
 import {format} from 'date-fns'
 ---
-<ol class="relative border-s border-gray-200 dark:border-gray-700">
+<ol class="relative border-s border-gray-200 dark:border-gray-300 ml-3">
     {
      items.map((item, index) => (
      <li class="mb-10 ms-4">
