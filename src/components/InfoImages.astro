@@ -1,0 +1,35 @@
+---
+const tags = {Tag1: {name: ".net C#", class: "bg-black text-white"}, Tag2: {name:"Astro, TailwindCSS", class: "bg-white text-black"}}
+const infoImages = [{
+    title: "Info 1",
+    description: "Description 1",
+    image: "/screenshot.webp",
+    link: "https://www.google.com",
+    tags: [tags.Tag1, tags.Tag2]
+},
+{
+    title: "Info 2",
+    description: "Description 2",
+    image: "/screenshot.webp",
+    link: "https://www.google.com",
+    tags: [tags.Tag1, tags.Tag2]
+}]
+---
+{
+    infoImages.map((info, index) => {
+        return (
+            <article>
+                <h3 class="text-2xl font-semibold mb-2">{info.title}</h3>
+                <p class="text-lg mb-4 text-pretty">{info.description}</p>
+                <ul class="flex gap-x-2 flex-row">
+                    {info.tags.map((tag, index) => {
+                        return (
+                            <span class=`flex gap-x-2 rounded-full text-xs ${tag.class} py-2 px-2`><li>{tag.name}</li></span>
+                        )
+                    })}
+                </ul>
+                <img class="rounded shadow-2xl shadow-white/20" src={info.image} alt={info.title}><a href={info.link}>Link</a></img>
+            </article>
+        )
+    })
+}
