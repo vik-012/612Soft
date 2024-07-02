@@ -1,24 +1,24 @@
-<!-- <header class="flex justify-between items-center py-5 w-[1120px] mx-auto">
-  <img src="/logo.png" alt="612Soft Logo" class="h-12 w-18" />
-  <div class="flex justify-start"><h2>Test</h2></div>
-  <nav class="flex flex-row gap-x-10 opacity-80">
-    <a href="/">Home</a>
-    <a href="/about">About</a>
-    <a href="/Services">Services</a>
-    <a href="/Contact">Contact</a>
-  </nav>
-</header> -->
-<header>
-    <div class="flex justify-between items-center py-5 w-full xl:w-[1120px] mx-auto">
-        <div class="flex items-center">
-            <img src="/logo.png" alt="612Soft Logo" class="h-12 w-12" />
-            <div class="ml-2"><h1 class="font-bold opacity-80 text-2xl">612Soft</h1></div>
-        </div>
-        <nav class="flex flex-row gap-x-10 opacity-80 px-2">
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/Services">Services</a>
-            <a href="/Contact">Contact</a>
-        </nav>
-    </div>
-</header>
+---
+// import LangDropButton from "@components/LangButton.tsx"
+import Counter from "@components/Test.tsx"
+import LangButton from "@components/LangButton.tsx"
+const display = "absolute";
+---
+<nav class="gap-x-10 opacity-80">
+  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+<div class="flex items-center">
+          <img src="/logo.png" alt="612Soft Logo" class="h-12 w-12" />
+          <div class="ml-2"><h1 class="font-bold opacity-80 text-2xl">612Soft</h1></div>
+      </div>
+  <!-- <LangButton client:load/> -->
+   <LangButton client:load/>
+  <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
+    <ul class="flex flex-col font-medium p-4 md:p-0 mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
+      <li><a href="/">Home</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/Services">Services</a></li>
+      <li><a href="/Contact">Contact</a></li>
+    </ul>
+  </div>
+  </div>
+</nav>
