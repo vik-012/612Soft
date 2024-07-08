@@ -1,5 +1,3 @@
-import { h, Component } from "preact";
-import React from "preact/compat";
 import { useCallback, useState } from "preact/hooks";
 
 export default function LangButton(props: any) {
