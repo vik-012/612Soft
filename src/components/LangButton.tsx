@@ -2,7 +2,7 @@ import { h, Component } from "preact";
 import React from "preact/compat";
 import { useCallback, useState } from "preact/hooks";
 
-export default function LangButton(props) {
+export default function LangButton(props: any) {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const toggleDropdown = useCallback(() => {
     setIsDropdownVisible(!isDropdownVisible);
