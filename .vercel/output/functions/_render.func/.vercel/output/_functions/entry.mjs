@@ -2419,7 +2419,7 @@ const createExports = (manifest, { middlewareSecret, skewProtection }) => {
 const _page0 = () => import('./pages/_image.astro.mjs');
 const _page1 = () => import('./pages/index.astro.mjs');
 const pageMap = new Map([
-    ["node_modules/astro/dist/assets/endpoint/generic.js", _page0],
+    ["node_modules/.pnpm/astro@4.11.3_typescript@5.4.5/node_modules/astro/dist/assets/endpoint/generic.js", _page0],
     ["src/pages/index.astro", _page1]
 ]);
 
@@ -2429,7 +2429,7 @@ const _manifest = Object.assign(manifest, {
     middleware: onRequest
 });
 const _args = {
-    "middlewareSecret": "9f32b876-1723-4770-84b1-51242e3ef1ab",
+    "middlewareSecret": "68518daf-55d6-45bc-a9b9-5e1bf9cfb396",
     "skewProtection": false
 };
 const _exports = createExports(_manifest, _args);
