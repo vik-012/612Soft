@@ -1,5 +1,5 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 // import Badge from "@components/Badge.astro";
 // import GitHub from "@components/icons/GitHub.astro";
 // import Csharp from "@components/icons/Csharp.astro";
@@ -10,22 +10,22 @@ import SectionContainer from "@components/SectionContainer.astro";
 import AssemblyIcon from "@components/icons/AssemblyIcon.astro";
 import InfoIcon from "@components/icons/InfoIcon.astro";
 import InfoImages from "@components/InfoImages.astro";
-import TypingText from '../components/TypingText.astro';
+import TypingText from '../../components/TypingText.astro';
 ---
 
 <Layout
-  title="612 Soft - Web development"
-  description="Choose us to develop a professional custom page for you."
+  title="612 Soft - Desarrollo Web"
+  description="Elíjanos para desarrollar una página personalizada y profesional para usted."
   language="es"
 >
 <TypingText />
   <main class="px-4">
     <SectionContainer id="invisibleSection" class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out">
-		<h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"><AssemblyIcon class="size-6"/>Our Services</h2>
+		<h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"><AssemblyIcon class="size-6"/>Nuestro Servicios</h2>
       <Timeline />
     </SectionContainer>
     <SectionContainer id="invisibleSection" class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out">
-      <h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"><InfoIcon class="size-6"/>About Us</h2>
+      <h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"><InfoIcon class="size-6"/>Sobre Nosotros</h2>
         <InfoImages/>
       </SectionContainer>
   </main>
