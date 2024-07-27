@@ -1,51 +1,86 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-// import Badge from "@components/Badge.astro";
-// import GitHub from "@components/icons/GitHub.astro";
-// import Csharp from "@components/icons/Csharp.astro";
-// import ReactIcon from "@components/icons/React.astro";
-// import SocialPill from "@components/SocialPill.astro";
+import Layout from "@layouts/Layout.astro";
 import Timeline from "@components/Timeline.astro";
 import SectionContainer from "@components/SectionContainer.astro";
 import AssemblyIcon from "@components/icons/AssemblyIcon.astro";
 import InfoIcon from "@components/icons/InfoIcon.astro";
 import InfoImages from "@components/InfoImages.astro";
-import TypingText from '../../components/TypingText.astro';
+const buttonsToShow = [
+  {
+    href: "/",
+    text: "Inicio",
+  },
+  {
+    href: "/about",
+    text: "Sobre nosotros",
+  },
+  {
+    href: "/services",
+    text: "Servicios",
+  },
+  {
+    href: "/contact",
+    text: "Contacto",
+  },
+];
+const mainText = 'Bienvenido a 612Soft, su principal destino para soluciones de desarrollo web de vanguardia. Nuestro equipo de desarrolladores y diseñadores experimentados se dedica a transformar su visión en un sitio web sorprendente, funcional y fácil de usar. Ya sea que necesite una página de destino simple o una plataforma de comercio electrónico compleja, combinamos creatividad, experiencia técnica y las últimas tendencias de la industria para ofrecer un producto que supere sus expectativas. Nuestro objetivo es ayudar a que su negocio prospere en el panorama digital al brindar una experiencia en línea perfecta para sus clientes.'
 ---
 
 <Layout
   title="612 Soft - Desarrollo Web"
   description="Elíjanos para desarrollar una página personalizada y profesional para usted."
   language="es"
+  buttons={buttonsToShow}
+  titleText="Bienvenido a 612Soft"
+  langButtonText="Idioma"
+  mainText={mainText}
 >
-<TypingText />
+  <!-- <TypingText titleText="Bienvenido a 612Soft" /> -->
   <main class="px-4">
-    <SectionContainer id="invisibleSection" class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out">
-		<h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"><AssemblyIcon class="size-6"/>Nuestro Servicios</h2>
+    <SectionContainer
+      id="invisibleSection"
+      class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out"
+    >
+      <h2
+        class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"
+      >
+        <AssemblyIcon class="size-6" />Nuestro Servicios
+      </h2>
       <Timeline />
     </SectionContainer>
-    <SectionContainer id="invisibleSection" class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out">
-      <h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"><InfoIcon class="size-6"/>Sobre Nosotros</h2>
-        <InfoImages/>
-      </SectionContainer>
+    <SectionContainer
+      id="invisibleSection"
+      class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out"
+    >
+      <h2
+        class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"
+      >
+        <InfoIcon class="size-6" />Sobre Nosotros
+      </h2>
+      <InfoImages />
+    </SectionContainer>
   </main>
 </Layout>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const observer: IntersectionObserver = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
-    entries.forEach((entry: IntersectionObserverEntry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.remove('opacity-0', 'translate-y-4');
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer: IntersectionObserver = new IntersectionObserver(
+      (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove("opacity-0", "translate-y-4");
+          }
+        });
+      },
+      {
+        rootMargin: "0px",
+        threshold: 0.1,
       }
-    });
-  }, {
-    rootMargin: "0px",
-    threshold: 0.1
-  });
+    );
 
-  const sections: NodeListOf<Element> = document.querySelectorAll(".observeMe");
-  sections.forEach((section: Element) => {
-    observer.observe(section);
+    const sections: NodeListOf<Element> =
+      document.querySelectorAll(".observeMe");
+    sections.forEach((section: Element) => {
+      observer.observe(section);
+    });
   });
-});
 </script>

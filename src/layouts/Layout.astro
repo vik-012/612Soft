@@ -7,10 +7,17 @@ import "@fontsource-variable/onest";
 interface Props {
   title: string;
   description: string;
-  language: string
+  language: string;
+  buttons:{
+    href: string;
+    text: string;
+  }[],
+  titleText:string,
+  langButtonText:string
+  mainText:string
 }
 
-const { title, description, language } = Astro.props;
+const { title, description, language, buttons, titleText, langButtonText, mainText } = Astro.props;
 //const localeUrls = getRelativeLocaleUrl("en");
 ---
 
@@ -30,8 +37,8 @@ const { title, description, language } = Astro.props;
     >
     </div>
     <div class="top-0 bottom-0 min-h-screen w-full">
-      <Header />
-      <MainView />
+      <Header buttons={buttons} langButtonText={langButtonText}/>
+      <MainView titleText={titleText} mainText={mainText}/>
 	</div>
       <slot />
     <!-- <div id="background" class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24"></div> -->
@@ -40,6 +47,7 @@ const { title, description, language } = Astro.props;
     <!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> -->
     <Footer />
   </body>
+  <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
 </html>
 <style is:global>
   :root {

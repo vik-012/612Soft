@@ -1,32 +1,39 @@
+---
+interface Props{
+  titleText:string
+}
+const { titleText } = Astro.props;
+---
 <style>
-    .typing {
-      font-family: monospace;
-      font-size: 36px;
-      white-space: nowrap;
-      overflow: hidden;
-      border-right: 3px solid;
-      animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+  .typing {
+    font-family: monospace;
+    font-size: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    animation:
+      typing 4s steps(40, end),
+      blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
     }
-  
-    @keyframes typing {
-      from {
-        width: 0;
-      }
-      to {
-        width: 50%;
-      }
+    to {
+      width: 50%;
     }
-  
-    @keyframes blink-caret {
-      from, to {
-        border-color: transparent;
-      }
-      50% {
-        border-color: black;
-      }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
     }
-  </style>
-  
-  <div class="typing">
-    Welcome to 612Soft
-  </div>
+    50% {
+      border-color: black;
+    }
+  }
+</style>
+<!-- <h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex">{titleText}</h2> -->
+<div class="typing">{titleText}</div>
