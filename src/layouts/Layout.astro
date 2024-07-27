@@ -54,9 +54,14 @@ const { title, description, language, buttons, titleText, langButtonText, mainTe
     color-scheme: light dark;
   }
   html {
-    background: #4723a7;
+    background: var(--background);
+    --background: #ffffff;
     font-family: "Onest Variable", system-ui, sans-serif;
     scroll-behavior: smooth;
+  }
+  .dark{
+    background: var(--background);
+    --background: #4723a7;
   }
   body {
     display: flex;
