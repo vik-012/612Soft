@@ -1,65 +1,99 @@
 ---
 // import LangButton from "@components/LangButton.tsx"
 //onst display = "absolute";
-import { getRelativeLocaleUrlList,  } from "astro:i18n";
+//import { getRelativeLocaleUrlList } from "astro:i18n";
 interface Props {
-  buttons: {
-    href: string;
-    text: string;
-  }[],
-  langButtonText:string
+   buttons: {
+      href: string;
+      text: string;
+   }[];
+   langButtonText: string;
+   langOptions: {
+      url: string;
+      name: string;
+   }[];
 }
-const { buttons, langButtonText } = Astro.props;
-const urls = getRelativeLocaleUrlList();
+const { buttons, langButtonText, langOptions } = Astro.props;
+//const urls = getRelativeLocaleUrlList();
 ---
 
-<nav class="gap-x-10 opacity-80">
-  <div
-    class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-  >
-    <div class="flex items-center">
-      <img src="/logo.png" alt="612Soft Logo" class="h-12 w-12" />
-      <div class="ml-2">
-        <h1 class="font-bold opacity-80 text-2xl">612Soft</h1>
+<nav class="gap-x-10 dark:opacity-80 text-black dark:text-white">
+   <div
+      class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+   >
+      <div class="flex items-center">
+         <img src="/logo.png" alt="612Soft Logo" class="h-12 w-12" />
+         <div class="ml-2">
+            <h1 class="font-bold dark:opacity-80 text-2xl">612Soft</h1>
+         </div>
       </div>
-    </div>
-    <!-- <LangButton client:load/> -->
-    <div
-      class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-    >
-      <ul
-        class="flex flex-col font-medium p-4 md:p-0 mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+      <!-- <LangButton client:load/> -->
+      <div
+         class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
       >
-        {
-          buttons?.map((btn) => (
-            <li>
-              <a href={btn.href}>{btn.text}</a>
-            </li>
-          ))
-        }
-        <!-- {
+         <ul
+            class="flex flex-col font-medium p-4 md:p-1 mt-4 md:space-x-6 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
+         >
+            {
+               buttons?.map((btn) => (
+                  <li>
+                     <a class="" href={btn.href}>
+                        {btn.text}
+                     </a>
+                  </li>
+               ))
+            }
+            <!-- {
           urls.map((url) => (
             <li>
               <a href={url}>{url}</a>
             </li>
           ))
         } -->
-        <button id="dropdownDefaultButton" data-dropdown-toggle="dropdown" class="text-white bg-[#4723a7] hover:bg-[#845af5] focus:ring-4 focus:outline-none focus:ring-black font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-[#4723a7] dark:hover:bg-[#845af5] dark:focus:ring-white" type="button">{langButtonText}<svg class="w-2.5 h-2.5 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
-          </svg>
-          </button>
-          
-          <!-- Dropdown menu -->
-          <div id="dropdown" class="z-10 hidden bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-              <ul class="py-2 text-sm text-black dark:text-gray-200" aria-labelledby="dropdownDefaultButton">
-                {
-                  urls.map((url) => (
-                    <li>
-                      <a class="block px-4 py-2 hover:bg-[#845af5] dark:hover:bg-[#845af5] hover:text-white" href={url}>{url}</a>
-                    </li>
-                  ))
-                }
-                <!-- <li>
+            <li>
+               <button
+                  id="dropdownDefaultButton"
+                  data-dropdown-toggle="dropdown"
+                  class="text-black dark:text-white rounde-full border rounded-full border-black/20 dark:border-white/20 flex justify-center items-center py-1 px-2 md:px-4 bg-white/5 text-xs md:text-base"
+                  type="button"
+                  >{langButtonText}<svg
+                     class="w-2.5 h-2.5 ms-3"
+                     aria-hidden="true"
+                     xmlns="http://www.w3.org/2000/svg"
+                     fill="none"
+                     viewBox="0 0 10 6"
+                  >
+                     <path
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="m1 1 4 4 4-4"></path>
+                  </svg>
+               </button>
+            </li>
+            <!-- Dropdown menu -->
+            <div
+               id="dropdown"
+               class="z-10 hidden bg-gray-200 divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+            >
+               <ul
+                  class="py-2 text-sm text-black dark:text-gray-200"
+                  aria-labelledby="dropdownDefaultButton"
+               >
+                  {
+                     langOptions?.map((url) => (
+                        <li>
+                           <a
+                              class="block px-4 py-2 hover:bg-[#845af5] dark:hover:bg-[#845af5] hover:text-white"
+                              href={url.url}
+                           >
+                              {url.name}
+                           </a>
+                        </li>
+                     ))
+                  }
+                  <!-- <li>
                   <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
                 </li>
                 <li>
@@ -71,13 +105,31 @@ const urls = getRelativeLocaleUrlList();
                 <li>
                   <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
                 </li> -->
-              </ul>
-          </div>
-        <!-- <li><a href="/">Home</a></li>
+               </ul>
+            </div>
+            <li>
+               <label class="inline-flex items-center mb-5 cursor-pointer py-1">
+                  <input
+                     type="checkbox"
+                     value=""
+                     class="sr-only peer"
+                     checked
+                  />
+                  <div
+                     class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-[#4723a7] rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:w-5 after:h-5 after:transition-all dark:border-gray-600 peer-checked:bg-[#4723a7]"
+                  >
+                  </div>
+                  <span
+                     class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                     >Dark</span
+                  >
+               </label>
+            </li>
+            <!-- <li><a href="/">Home</a></li>
       <li><a href="/about">About</a></li>
       <li><a href="/services">Services</a></li>
       <li><a href="/contact">Contact</a></li> -->
-      </ul>
-    </div>
-  </div>
+         </ul>
+      </div>
+   </div>
 </nav>

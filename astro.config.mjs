@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [tailwind(), preact()],
   i18n: {
     locales: ['en', 'es'],
-    defaultLocale: 'en',
+    defaultLocale: 'es',
     routing: {
       prefixDefaultLocale: true
     }

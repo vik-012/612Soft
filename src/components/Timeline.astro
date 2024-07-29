@@ -1,50 +1,13 @@
 ---
-var date = new Date()
-const items = [
-    {
-        date: format(new Date(), "yyyy-MM-dd"),
-        title: 'Application UI code in Tailwind CSS',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.',
-        link: '#',
-    },
-    {
-        date: format(date.setDate(date.getDate() - 1), "yyyy-MM-dd"),
-        title: 'Design System in Figma',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
-    },
-    {
-        date: format(date.setDate(date.getDate() - 2), "yyyy-MM-dd"),
-        title: 'Design System in Figma',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
-    },
-    {
-        date: format(date.setDate(date.getDate() - 3), "yyyy-MM-dd"),
-        title: 'Design System in Figma',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
-    },
-    {
-        date: format(date.setDate(date.getDate() - 4), "yyyy-MM-dd"),
-        title: 'Design System in Figma',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
-    },
-    {
-        date: format(date.setDate(date.getDate() - 5), "yyyy-MM-dd"),
-        title: 'Design System in Figma',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
-    },
-    {
-        date: format(date.setDate(date.getDate() - 6), "yyyy-MM-dd"),
-        title: 'Design System in Figma',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
-    },
-    {
-        date: format(date.setDate(date.getDate() - 7), "yyyy-MM-dd"),
-        title: 'Design System in Figma',
-        description: 'Get access to over 20+ pages including a dashboard layout, charts, kanban board, calendar, and pre-order E-commerce & Marketing pages.'
-    }]
-    
+var date = new Date()    
 import TimelineItem from './TimelineItem.astro'
-import {format} from 'date-fns'
+interface Props{
+    items:{
+        title:string,
+        description:string
+    }[]
+}
+const {items} = Astro.props
 ---
 <ol class="relative border-s border-gray-200 dark:border-gray-300 ml-3">
     {

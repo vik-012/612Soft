@@ -8,21 +8,34 @@ interface Props {
   title: string;
   description: string;
   language: string;
-  buttons:{
+  buttons: {
     href: string;
     text: string;
-  }[],
-  titleText:string,
-  langButtonText:string
-  mainText:string
+  }[];
+  titleText: string;
+  langButtonText: string;
+  mainText: string;
+  langOptions: {
+    url: string;
+    name: string;
+  }[];
 }
 
-const { title, description, language, buttons, titleText, langButtonText, mainText } = Astro.props;
+const {
+  title,
+  description,
+  language,
+  buttons,
+  titleText,
+  langButtonText,
+  mainText,
+  langOptions
+} = Astro.props;
 //const localeUrls = getRelativeLocaleUrl("en");
 ---
 
 <!doctype html>
-<html lang={language}>
+<html lang={language} class="dark bg-white dark:bg-[#4723a7]">
   <head>
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
@@ -33,36 +46,41 @@ const { title, description, language, buttons, titleText, langButtonText, mainTe
   </head>
   <body>
     <div
-      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"
     >
     </div>
     <div class="top-0 bottom-0 min-h-screen w-full">
-      <Header buttons={buttons} langButtonText={langButtonText}/>
-      <MainView titleText={titleText} mainText={mainText}/>
-	</div>
-      <slot />
+      <Header buttons={buttons} langButtonText={langButtonText} langOptions={langOptions} />
+      <MainView titleText={titleText} mainText={mainText} />
+    </div>
+    <slot />
     <!-- <div id="background" class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24"></div> -->
     <!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"></div> -->
     <!-- <div class="relative h-full w-full bg-slate-950"><div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_500px_at_50%_200px,#3e3e3e,transparent)]"></div> -->
     <!-- <div class="absolute inset-0 -z-10 h-full w-full bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)]"></div> -->
     <Footer />
   </body>
-  <script is:inline src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+  <script
+    is:inline
+    src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"
+  />
+  <script src="@scripts/themeToggle.ts"/>
+  <script src="@scripts/appearingEffect.ts"/>
 </html>
 <style is:global>
   :root {
     color-scheme: light dark;
   }
   html {
-    background: var(--background);
-    --background: #ffffff;
+    /* background: var(--background);
+    --background: #ffffff; */
     font-family: "Onest Variable", system-ui, sans-serif;
     scroll-behavior: smooth;
   }
-  .dark{
+  /* .dark{
     background: var(--background);
     --background: #4723a7;
-  }
+  } */
   body {
     display: flex;
     flex-direction: column;

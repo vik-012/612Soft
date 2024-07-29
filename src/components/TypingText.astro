@@ -1,16 +1,25 @@
 ---
-interface Props{
-  titleText:string
+interface Props {
+  titleText: string;
 }
 const { titleText } = Astro.props;
 ---
+
 <style>
+  :root {
+    --caret-color: black; /* Color por defecto (tema claro) */
+  }
+
+  .dark {
+    --caret-color: white; /* Color para el tema oscuro */
+  }
+
   .typing {
     font-family: monospace;
     font-size: 36px;
     white-space: nowrap;
     overflow: hidden;
-    border-right: 3px solid;
+    border-right: 3px solid var(--caret-color);
     animation:
       typing 4s steps(40, end),
       blink-caret 0.75s step-end infinite;
@@ -31,9 +40,9 @@ const { titleText } = Astro.props;
       border-color: transparent;
     }
     50% {
-      border-color: black;
+      border-color: var(--caret-color);
     }
   }
 </style>
 <!-- <h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex">{titleText}</h2> -->
-<div class="typing">{titleText}</div>
+<div class="typing text-black dark:text-white">{titleText}</div>

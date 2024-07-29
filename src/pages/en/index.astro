@@ -5,6 +5,7 @@ import SectionContainer from "@components/SectionContainer.astro";
 import AssemblyIcon from "@components/icons/AssemblyIcon.astro";
 import InfoIcon from "@components/icons/InfoIcon.astro";
 import InfoImages from "@components/InfoImages.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
 const buttonsToShow = [
   {
     href: "/",
@@ -23,7 +24,42 @@ const buttonsToShow = [
     text: "Contact",
   },
 ];
-const mainText = 'Welcome to 612Soft, your premier destination for cutting-edge web development solutions. Our team of experienced developers and designers is dedicated to transforming your vision into a stunning, functional, and user-friendly website. Whether you need a simple landing page or a complex e-commerce platform, we combine creativity, technical expertise, and the latest industry trends to deliver a product that exceeds your expectations. Our goal is to help your business thrive in the digital landscape by providing a seamless online experience for your customers.'
+const mainText =
+  "Welcome to 612Soft, your premier destination for cutting-edge web development solutions. Our team of experienced developers and designers is dedicated to transforming your vision into a stunning, functional, and user-friendly website. Whether you need a simple landing page or a complex e-commerce platform, we combine creativity, technical expertise, and the latest industry trends to deliver a product that exceeds your expectations. Our goal is to help your business thrive in the digital landscape by providing a seamless online experience for your customers.";
+const services = [
+  {
+    title: "Revolutionizing E-commerce with Custom Solutions",
+    description:
+      "Discover how 612Soft delivers tailor-made e-commerce platforms that boost sales and enhance user experience. Our custom solutions cater to unique business needs, ensuring seamless integration and scalability.",
+  },
+  {
+    title: "Streamlining Business Operations with ERP Systems",
+    description:
+      "612Soft specializes in developing robust ERP systems that streamline business processes, improve efficiency, and provide real-time insights. Learn how our ERP solutions can transform your business operations.",
+  },
+  {
+    title: "Empowering Startups with MVP Development",
+    description:
+      "612Soft helps startups bring their ideas to life with Minimum Viable Product (MVP) development. Our agile approach ensures rapid development, allowing startups to validate their concepts and attract investors.",
+  },
+  {
+    title: "Enhancing Customer Engagement with Custom CRM Software",
+    description:
+      "612Soft's custom CRM solutions help businesses manage customer relationships effectively. Our CRM software is designed to enhance customer engagement, improve sales, and streamline communication.",
+  },
+  {
+    title: "Transforming Education with E-learning Platforms",
+    description:
+      "Explore how 612Soft's e-learning platforms revolutionize the education sector. Our solutions provide interactive and scalable learning experiences, catering to the needs of both educators and learners.",
+  },
+];
+const langs = [{
+  url: getRelativeLocaleUrl("es"),
+  name:"Spanish"
+},{
+  url: getRelativeLocaleUrl("en"),
+  name:"English"
+}]
 ---
 
 <Layout
@@ -34,6 +70,7 @@ const mainText = 'Welcome to 612Soft, your premier destination for cutting-edge 
   titleText="Welcome to 612Soft"
   langButtonText="Language"
   mainText={mainText}
+  langOptions={langs}
 >
   <!-- <TypingText titleText="Welcome to 612Soft"/> -->
   <main class="px-4">
@@ -42,11 +79,11 @@ const mainText = 'Welcome to 612Soft, your premier destination for cutting-edge 
       class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out"
     >
       <h2
-        class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"
+        class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex py-8"
       >
         <AssemblyIcon class="size-6" />Our Services
       </h2>
-      <Timeline />
+      <Timeline items={services}/>
     </SectionContainer>
     <SectionContainer
       id="invisibleSection"
@@ -61,26 +98,3 @@ const mainText = 'Welcome to 612Soft, your premier destination for cutting-edge 
     </SectionContainer>
   </main>
 </Layout>
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const observer: IntersectionObserver = new IntersectionObserver(
-      (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry: IntersectionObserverEntry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove("opacity-0", "translate-y-4");
-          }
-        });
-      },
-      {
-        rootMargin: "0px",
-        threshold: 0.1,
-      }
-    );
-
-    const sections: NodeListOf<Element> =
-      document.querySelectorAll(".observeMe");
-    sections.forEach((section: Element) => {
-      observer.observe(section);
-    });
-  });
-</script>
