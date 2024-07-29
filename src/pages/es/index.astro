@@ -1,0 +1,99 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Timeline from "@components/Timeline.astro";
+import SectionContainer from "@components/SectionContainer.astro";
+import AssemblyIcon from "@components/icons/AssemblyIcon.astro";
+import InfoIcon from "@components/icons/InfoIcon.astro";
+import InfoImages from "@components/InfoImages.astro";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const buttonsToShow = [
+  {
+    href: "/",
+    text: "Inicio",
+  },
+  {
+    href: "/about",
+    text: "Sobre nosotros",
+  },
+  {
+    href: "/services",
+    text: "Servicios",
+  },
+  {
+    href: "/contact",
+    text: "Contacto",
+  },
+];
+const mainText = 'Bienvenido a 612Soft, su principal destino para soluciones de desarrollo web de vanguardia. Nuestro equipo de desarrolladores y diseñadores experimentados se dedica a transformar su visión en un sitio web sorprendente, funcional y fácil de usar. Ya sea que necesite una página de destino simple o una plataforma de comercio electrónico compleja, combinamos creatividad, experiencia técnica y las últimas tendencias de la industria para ofrecer un producto que supere sus expectativas. Nuestro objetivo es ayudar a que su negocio prospere en el panorama digital al brindar una experiencia en línea perfecta para sus clientes.'
+const services = [
+  {
+    title: "Revolucionando el Comercio Electrónico con Soluciones Personalizadas",
+    description:
+      "Descubre cómo 612Soft ofrece plataformas de comercio electrónico a medida que aumentan las ventas y mejoran la experiencia del usuario. Nuestras soluciones personalizadas se adaptan a las necesidades únicas del negocio, asegurando una integración y escalabilidad sin problemas.",
+  },
+  {
+    title: "Optimización de Operaciones Empresariales con Sistemas ERP",
+    description:
+      "612Soft se especializa en desarrollar sistemas ERP robustos que optimizan los procesos empresariales, mejoran la eficiencia y proporcionan información en tiempo real. Descubre cómo nuestras soluciones ERP pueden transformar las operaciones de tu negocio.",
+  },
+  {
+    title: "Empoderando a las Startups con el Desarrollo de MVP",
+    description:
+      "612Soft ayuda a las startups a llevar sus ideas a la vida con el desarrollo de Producto Mínimo Viable (MVP). Nuestro enfoque ágil asegura un desarrollo rápido, permitiendo a las startups validar sus conceptos y atraer inversores.",
+  },
+  {
+    title: "Mejorando el Compromiso del Cliente con Software CRM Personalizado",
+    description:
+      "Las soluciones CRM personalizadas de 612Soft ayudan a las empresas a gestionar eficazmente las relaciones con los clientes. Nuestro software CRM está diseñado para mejorar el compromiso del cliente, incrementar las ventas y optimizar la comunicación.",
+  },
+  {
+    title: "Transformando la Educación con Plataformas de E-learning",
+    description:
+      "Explora cómo las plataformas de e-learning de 612Soft revolucionan el sector educativo. Nuestras soluciones ofrecen experiencias de aprendizaje interactivas y escalables, atendiendo las necesidades tanto de educadores como de estudiantes.",
+  },
+];
+const langs = [{
+  url: getRelativeLocaleUrl("es"),
+  name:"Español"
+},{
+  url: getRelativeLocaleUrl("en"),
+  name:"Ingles"
+}]
+---
+
+<Layout
+  title="612 Soft - Desarrollo Web"
+  description="Elíjanos para desarrollar una página personalizada y profesional para usted."
+  language="es"
+  buttons={buttonsToShow}
+  titleText="Bienvenido a 612Soft"
+  langButtonText="Idioma"
+  mainText={mainText}
+  langOptions={langs}
+>
+  <!-- <TypingText titleText="Bienvenido a 612Soft" /> -->
+  <main class="px-4">
+    <SectionContainer
+      id="invisibleSection"
+      class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out"
+    >
+      <h2
+        class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex py-8"
+      >
+        <AssemblyIcon class="size-6" />Nuestro Servicios
+      </h2>
+      <Timeline items={services}/>
+    </SectionContainer>
+    <SectionContainer
+      id="invisibleSection"
+      class="observeMe opacity-0 translate-y-4 transition-opacity duration-700 ease-out"
+    >
+      <h2
+        class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex"
+      >
+        <InfoIcon class="size-6" />Sobre Nosotros
+      </h2>
+      <InfoImages />
+    </SectionContainer>
+  </main>
+</Layout>

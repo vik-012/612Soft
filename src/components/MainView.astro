@@ -5,28 +5,41 @@ import Csharp from "./icons/Csharp.astro";
 import ReactIcon from "./icons/React.astro";
 import SocialPill from "./SocialPill.astro";
 import SectionContainer from "./SectionContainer.astro";
-import TypingText from '../components/TypingText.astro';
+import TypingText from "../components/TypingText.astro";
+interface Props {
+   titleText: string;
+   mainText: string;
+}
+const { titleText, mainText } = Astro.props;
 ---
+
 <SectionContainer class="py-24 pb-30">
-    <h1 class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 justify-center lg:justify-normal">
-      <TypingText /><a
-        href="https://x.com/@612Soft"
-        class="flex justify-center items-center"
-        ><Badge>Working on it!</Badge></a>
-    </h1>
-    <h2 class="text-sm md:text-lg lg:text-xl opacity-80 max-w-[800px] justify-center lg:justify-normal text-balance">Welcome to 612Soft, your premier destination for cutting-edge web development solutions. Our team of experienced developers and designers is dedicated to transforming your vision into a stunning, functional, and user-friendly website. Whether you need a simple landing page or a complex e-commerce platform, we combine creativity, technical expertise, and the latest industry trends to deliver a product that exceeds your expectations. Our goal is to help your business thrive in the digital landscape by providing a seamless online experience for your customers.</h2>
-    <ul class="flex gap-x-2 mt-4 flex-wrap justify-center lg:justify-normal">
+   <h1
+      class="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10 justify-center lg:justify-normal"
+   >
+      <TypingText titleText={titleText} /><a
+         href="https://x.com/@612Soft"
+         class="flex justify-center items-center"
+         ><Badge>Working on it!</Badge></a
+      >
+   </h1>
+   <h2
+      class="text-sm md:text-lg lg:text-xl opacity-80 max-w-[800px] justify-center lg:justify-normal text-balance text-black dark:text-white"
+   >
+      {mainText}
+   </h2>
+   <ul class="flex gap-x-2 mt-4 flex-wrap justify-center lg:justify-normal">
       <SocialPill href="https://github.com/vik-012/612Soft">
-        <GitHub class="size-4 md:size-6" />
-        GitHub
+         <GitHub class="size-4 md:size-6" />
+         GitHub
       </SocialPill>
       <SocialPill href="https://dotnet.microsoft.com/es-es/languages/csharp">
-        <Csharp class="size-4 md:size-6" />
-        C#
+         <Csharp class="size-4 md:size-6" />
+         C#
       </SocialPill>
       <SocialPill href="https://react.dev/learn/typescript">
-        <ReactIcon class="size-4 md:size-6" />
-        React
+         <ReactIcon class="size-4 md:size-6" />
+         React
       </SocialPill>
-    </ul>
-  </SectionContainer>
+   </ul>
+</SectionContainer>
