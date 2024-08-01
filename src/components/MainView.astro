@@ -1,11 +1,11 @@
 ---
 import Badge from "./Badge.astro";
-import GitHub from "./icons/GitHub.astro";
-import Csharp from "./icons/Csharp.astro";
-import ReactIcon from "./icons/React.astro";
 import SocialPill from "./SocialPill.astro";
 import SectionContainer from "./SectionContainer.astro";
 import TypingText from "../components/TypingText.astro";
+import Facebook from "./icons/Facebook.astro";
+import X from "./icons/X.astro";
+import Instagram from "./icons/Instagram.astro";
 interface Props {
    titleText: string;
    mainText: string;
@@ -29,17 +29,17 @@ const { titleText, mainText } = Astro.props;
       {mainText}
    </h2>
    <ul class="flex gap-x-2 mt-4 flex-wrap justify-center lg:justify-normal">
-      <SocialPill href="https://github.com/vik-012/612Soft">
-         <GitHub class="size-4 md:size-6" />
-         GitHub
+      <SocialPill href="https://www.facebook.com/612Soft/">
+         <Facebook class="size-4 md:size-6" />
+         Facebook
       </SocialPill>
-      <SocialPill href="https://dotnet.microsoft.com/es-es/languages/csharp">
-         <Csharp class="size-4 md:size-6" />
-         C#
+      <SocialPill href="https://x.com/612Soft">
+         <X class="size-4 md:size-6 fill-black dark:fill-white" />
+         X/Twitter
       </SocialPill>
-      <SocialPill href="https://react.dev/learn/typescript">
-         <ReactIcon class="size-4 md:size-6" />
-         React
+      <SocialPill href="https://instagram.com/612Soft">
+         <Instagram class="size-4 md:size-6 fill-black dark:fill-white" />
+         Instagram
       </SocialPill>
    </ul>
 </SectionContainer>

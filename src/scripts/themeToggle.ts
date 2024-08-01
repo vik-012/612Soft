@@ -8,8 +8,10 @@ const checkBox = document.querySelector(
       if (value) {
          document.documentElement.classList.add("dark");
          div.classList.add("dark"); // para cambiar el titulo con efecto de typing
+         localStorage.theme = "dark"
       } else {
          document.documentElement.classList.remove("dark");
          div.classList.remove("dark");
+         localStorage.theme = "light"
       }
    });

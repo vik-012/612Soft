@@ -16,7 +16,6 @@ const { titleText } = Astro.props;
 
   .typing {
     font-family: monospace;
-    font-size: 36px;
     white-space: nowrap;
     overflow: hidden;
     border-right: 3px solid var(--caret-color);
@@ -45,4 +44,4 @@ const { titleText } = Astro.props;
   }
 </style>
 <!-- <h2 class="text-sm md:text-xl lg:text-2xl font-semibold mb-6 gap-x-3 text-black/80 dark:text-white flex">{titleText}</h2> -->
-<div class="typing text-black dark:text-white">{titleText}</div>
+<div class="typing text-black dark:text-white text-xl md:text-2xl lg:text-3xl">{titleText}</div>
