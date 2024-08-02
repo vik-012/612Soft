@@ -1,19 +1,11 @@
 <script is:inline>
     const theme = localStorage.theme;
-    const div = document.querySelector("div.typing");
-    // const checkBox = document.querySelector(
-    //    'input[type="checkbox"]'
-    // )
     if (
       theme === 'dark'
     ) {
         document.documentElement.classList.add("dark");
-        div.classList.add("dark"); // para cambiar el titulo con efecto de typing
-        //checkBox.checked = true
     }
     else{
         document.documentElement.classList.remove("dark");
-        div.classList.remove("dark");
-        //checkBox.checked = false;
     }
   </script>
