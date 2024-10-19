@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import preact from "@astrojs/preact";
+import htaccessIntegration from "astro-htaccess";
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +11,7 @@ export default defineConfig({
     defaultLocale: 'es',
     routing: {
       prefixDefaultLocale: true
-    }
+    },
+    integrations: [htaccessIntegration()]
   }
 });
