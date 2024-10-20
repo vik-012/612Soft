@@ -23,9 +23,6 @@ importers:
       astro:
         specifier: ^4.11.3
         version: 4.11.3(typescript@5.4.5)
-      astro-htaccess:
-        specifier: ^0.2.0
-        version: 0.2.0(astro@4.11.3(typescript@5.4.5))
       date-fns:
         specifier: ^3.6.0
         version: 3.6.0
@@ -796,11 +793,6 @@ packages:
 
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
-
-  astro-htaccess@0.2.0:
-    resolution: {integrity: sha512-2QCike5DRkeBfbvkhBXkaRw18WkOLu7+jo7GSrlBPc8lcfk0BipXsGl8ggv5MCcDEt1iADdki9V5W4XecA0T7w==}
-    peerDependencies:
-      astro: ^4.0.0
 
   astro@4.11.3:
     resolution: {integrity: sha512-SuZbB/71XVn+WqWNCe7XOfHuqhS+k4gj8+A3wluTZQrORGaHUFRn/f8F9Tu5yESQZB1q8UKhahvHwkTV3AdVsg==}
@@ -3046,10 +3038,6 @@ snapshots:
       dequal: 2.0.3
 
   array-iterate@2.0.1: {}
-
-  astro-htaccess@0.2.0(astro@4.11.3(typescript@5.4.5)):
-    dependencies:
-      astro: 4.11.3(typescript@5.4.5)
 
   astro@4.11.3(typescript@5.4.5):
     dependencies:

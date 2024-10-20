@@ -15,7 +15,6 @@
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/onest": "^5.0.4",
     "astro": "^4.11.3",
-    "astro-htaccess": "^0.2.0",
     "date-fns": "^3.6.0",
     "flowbite": "^2.4.1",
     "preact": "^10.22.1",
