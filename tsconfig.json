@@ -6,7 +6,8 @@
         "@components/*": ["src/components/*"],
         "@assets/*": ["src/assets/*"],
         "@layouts/*": ["src/layouts/*"],
-        "@scripts/*": ["src/scripts/*"]
+        "@scripts/*": ["src/scripts/*"],
+        "@lib/*": ["src/lib/*"]
      },
      "jsx": "react-jsx",
      "jsxImportSource": "preact"

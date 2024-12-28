@@ -7,6 +7,23 @@ import InfoIcon from "@components/icons/InfoIcon.astro";
 import InfoImages from "@components/InfoImages.astro";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import Link from "@components/icons/Link.astro";
+import { supabase } from "@lib/supabaseClient";
+
+const { data: servicesData, error: servicesError } = await supabase
+  .from('service')
+  .select('title, description');
+
+if (servicesError) {
+  console.error(servicesError);
+}
+
+const { data: publicationData, error: publicationError } = await supabase
+  .from('publication')
+  .select('*');
+
+if (publicationError) {
+  console.error(publicationError);
+}
 
 const buttonsToShow = [
   {
@@ -29,34 +46,6 @@ const buttonsToShow = [
 
 const mainText = 'Bienvenido a 612Soft, su principal destino para soluciones de desarrollo web de vanguardia. Nuestro equipo de desarrolladores y diseñadores experimentados se dedica a transformar su visión en un sitio web sorprendente, funcional y fácil de usar. Ya sea que necesite una página de destino simple o una plataforma de comercio electrónico compleja, combinamos creatividad, experiencia técnica y las últimas tendencias de la industria para ofrecer un producto que supere sus expectativas. Nuestro objetivo es ayudar a que su negocio prospere en el panorama digital al brindar una experiencia en línea perfecta para sus clientes.'
 
-const services = [
-  {
-    title: "Revolucionando el Comercio Electrónico con Soluciones Personalizadas",
-    description:
-      "Descubre cómo 612Soft ofrece plataformas de comercio electrónico a medida que aumentan las ventas y mejoran la experiencia del usuario. Nuestras soluciones personalizadas se adaptan a las necesidades únicas del negocio, asegurando una integración y escalabilidad sin problemas.",
-  },
-  {
-    title: "Optimización de Operaciones Empresariales con Sistemas ERP",
-    description:
-      "612Soft se especializa en desarrollar sistemas ERP robustos que optimizan los procesos empresariales, mejoran la eficiencia y proporcionan información en tiempo real. Descubre cómo nuestras soluciones ERP pueden transformar las operaciones de tu negocio.",
-  },
-  {
-    title: "Empoderando a las Startups con el Desarrollo de MVP",
-    description:
-      "612Soft ayuda a las startups a llevar sus ideas a la vida con el desarrollo de Producto Mínimo Viable (MVP). Nuestro enfoque ágil asegura un desarrollo rápido, permitiendo a las startups validar sus conceptos y atraer inversores.",
-  },
-  {
-    title: "Soporte técnico especializado",
-    description:
-      "Brindamos asistencia técnica personalizada para garantizar el óptimo funcionamiento de tus sistemas.",
-  },
-  {
-    title: "Optimización de procesos",
-    description:
-      "Diseñamos soluciones que mejoran la eficiencia de tus procesos empresariales.",
-  },
-];
-
 const langs = [{
   url: getRelativeLocaleUrl("es"),
   name:"Español"
@@ -65,22 +54,16 @@ const langs = [{
   name:"Ingles"
 }]
 
-const tags = {Tag1: {name: "Facebook", class: "bg-black text-white"}, Tag2: {name:"X/Twitter", class: "bg-gray-300 text-black"}, Tag3: {name:"Instagram", class: "bg-black text-white"}, Tag4: {name:"Whatsapp", class: "bg-gray-300 text-black"}}
+const tags = {
+  Tag1: {name: "Facebook", class: "bg-black text-white"},
+  Tag2: {name:"X/Twitter", class: "bg-gray-300 text-black"},
+  Tag3: {name:"Instagram", class: "bg-black text-white"},
+  Tag4: {name:"Whatsapp", class: "bg-gray-300 text-black"}
+}
 
-const infoImages = [{
-    title: "Quienes somos",
-    description: "Somos una empresa líder en el desarrollo de software personalizado para empresas. Nuestro enfoque se basa en comprender las necesidades específicas de nuestros clientes y diseñar soluciones que impulsen su eficiencia y competitividad.",
-    image: "/content/mac.webp",
-    link: "https://612soft.com/",
-    tags: []
-},
-{
-    title: "Localización",
-    description: "Con nuestro centro de operaciones localizado en La Paz, Baja California Sur, México.",
-    image: "/content/programming.webp",
-    link: "https://612soft.com/",
-    tags: []
-}]
+const services = servicesData || [];
+
+const infoImages = publicationData || [];
 ---
 
 <Layout
@@ -94,6 +77,8 @@ const infoImages = [{
   langOptions={langs}
 >
   <!-- <TypingText titleText="Bienvenido a 612Soft" /> -->
+  <!-- <h1>Data from Supabase</h1>
+  <pre>{JSON.stringify(data, null, 2)}</pre> -->
   <main class="px-4">
     <SectionContainer
       id="invisibleSection"
