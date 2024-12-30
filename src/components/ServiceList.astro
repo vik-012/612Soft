@@ -1,0 +1,20 @@
+---
+import ServiceItem from "./ServiceItem.astro";
+import { supabase } from '@lib/supabaseClient.ts'
+const { data: services, error: servicesError } = await supabase
+   .from('service')
+   .select('*')
+if (servicesError) {
+   console.error('Error fetching buttons:', servicesError.message);
+}
+---
+<ol class="relative ml-3">
+    {
+     services?.map((item) => (
+     <li class="mb-10 ms-4">
+        <ServiceItem {...item} />
+    </li>))
+    }
+    <li class="mb-10 ms-4">        
+    </li>
+</ol>
