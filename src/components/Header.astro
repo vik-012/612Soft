@@ -10,7 +10,7 @@ if (buttonsError) {
 ---
 <header class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2">
    <nav class="flex px-3 text-sm font-medium rounded-full text-gray-700 dark:text-gray-200 justify-center items-center
-   border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 py-2.5 me-2 mb-2 dark:bg-gray-80 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700">
+   border border-gray-300 focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 py-2.5 me-2 mb-2 dark:bg-gray-80 dark:border-gray-600 dark:hover:bg-gray-900 dark:hover:border-gray-600 dark:focus:ring-gray-700">
       {
          buttons?.map((btn) => (
                <a class="relative block px-2 py-2 transition hover:text-purple-600" href={btn.url}>
@@ -53,7 +53,8 @@ if (buttonsError) {
 
    </nav>
 </header>
-<script is:inline>
+<script is:inline src="src/scripts/theme.ts"></script>
+<!-- <script is:inline>
    let remove = null
    const matchMedia = window.matchMedia("(prefers-color-scheme: dark)")
    const themesMenu = document.getElementById("themes-menu")
@@ -123,110 +124,4 @@ if (buttonsError) {
            behavior: 'instant'
        });
    })
-   </script>
-   <!-- <nav class="gap-x-10 dark:opacity-80 text-black dark:text-white">
-      <div
-         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
-      >
-         <div class="flex items-center">
-            <img src="/logo.png" alt="612Soft Logo" class="h-12 w-12" />
-            <div class="ml-2">
-               <h1 class="font-bold dark:opacity-80 text-2xl">612Soft</h1>
-            </div>
-         </div>
-         <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-         >
-            <span class="sr-only">Open main menu</span>
-            <svg
-               class="w-5 h-5"
-               aria-hidden="true"
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 17 14"
-            >
-               <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 1h15M1 7h15M1 13h15"></path>
-            </svg>
-         </button>
-         <div
-            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-            id="navbar-default"
-         >
-            <ul
-               class="flex flex-col font-medium p-4 md:p-1 mt-4 md:space-x-6 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
-            >
-               {
-                  buttons?.map((btn) => (
-                     <li>
-                        <a class="" href={btn.href}>
-                           {btn.text}
-                        </a>
-                     </li>
-                  ))
-               }
-            </ul>
-         </div>
-      </div>
-   </nav> -->
-   <!-- <nav
-      class="gap-x-10 dark:opacity-80 text-black dark:text-white flex flex-wrap"
-   >
-      <div class="flex items-center justify-start">
-         <img src="/logo.png" alt="612Soft Logo" class="h-12 w-12" />
-         <div class="ml-2">
-            <h1 class="font-bold dark:opacity-80 text-2xl">612Soft</h1>
-         </div>
-      </div>
-      <div class="flex w-full">
-         <button
-            data-collapse-toggle="navbar-default"
-            type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-            aria-controls="navbar-default"
-            aria-expanded="false"
-         >
-            <span class="sr-only">Open main menu</span>
-            <svg
-               class="w-5 h-5"
-               aria-hidden="true"
-               xmlns="http://www.w3.org/2000/svg"
-               fill="none"
-               viewBox="0 0 17 14"
-            >
-               <path
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M1 1h15M1 7h15M1 13h15"></path>
-            </svg>
-         </button>
-         <div
-            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
-            id="navbar-default"
-         >
-            <ul
-               class="flex flex-col font-medium p-4 md:p-1 mt-4 md:space-x-6 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0"
-            >
-               {
-                  buttons?.map((btn) => (
-                     <li>
-                        <a class="" href={btn.url}>
-                           {btn.text}
-                        </a>
-                     </li>
-                  ))
-               }
-            </ul>
-         </div>
-      </div>
-   </nav> -->
+   </script> -->

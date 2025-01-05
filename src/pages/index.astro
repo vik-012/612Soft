@@ -5,6 +5,11 @@ import AssemblyIcon from "src/components/icons/AssemblyIcon.astro";
 import SectionContainer from "src/components/SectionContainer.astro";
 import InfoIcon from "src/components/icons/InfoIcon.astro";
 import PublicationList from "src/components/PublicationList.astro";
+import Badge from "src/components/Badge.astro";
+import SocialPill from "src/components/SocialPill.astro";
+import Facebook from "src/components/icons/Facebook.astro";
+import Twitter from "src/components/icons/Twitter.astro";
+import Instagram from "src/components/icons/Instagram.astro";
 ---
 
 <Layout>
@@ -15,6 +20,10 @@ import PublicationList from "src/components/PublicationList.astro";
       >
       <img src="/logo.png" alt="612Soft Logo" class="h-12 w-12" />
          Bienvenido a 612Soft
+         <a
+          href="https://x.com/@612Soft"
+          class="flex justify-center items-center"
+          ><Badge>Disponible!</Badge></a>
          <!-- <TypingText titleText={titleText} /><a
           href="https://x.com/@612Soft"
           class="flex justify-center items-center"
@@ -35,20 +44,20 @@ import PublicationList from "src/components/PublicationList.astro";
          el panorama digital al brindar una experiencia en línea perfecta para
          sus clientes.
       </h2>
-      <!-- <ul class="flex gap-x-2 mt-4 flex-wrap justify-center lg:justify-normal">
+      <ul class="flex gap-x-2 mt-4 flex-wrap justify-center lg:justify-normal">
        <SocialPill href="https://www.facebook.com/people/612soft/61561116395368/">
-          <Facebook class="size-4 md:size-6" />
+          <Facebook class="size-4 md:size-6 fill-black dark:fill-white" />
           Facebook
        </SocialPill>
        <SocialPill href="https://x.com/612Soft">
-          <X class="size-4 md:size-6 fill-black dark:fill-white" />
+          <Twitter class="size-4 md:size-6 fill-black dark:fill-white" />
           X/Twitter
        </SocialPill>
        <SocialPill href="https://instagram.com/612Soft">
           <Instagram class="size-4 md:size-6 fill-black dark:fill-white" />
           Instagram
        </SocialPill>
-    </ul> -->
+    </ul>
    </SectionContainer>
    <SectionContainer id="welcome">
       <h2
