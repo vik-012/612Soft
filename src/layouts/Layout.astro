@@ -1,4 +1,5 @@
 ---
+import GoogleAnalytics from "src/components/GoogleAnalytics.astro";
 import Header from "src/components/Header.astro";
 ---
 
@@ -14,6 +15,7 @@ import Header from "src/components/Header.astro";
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <meta name="generator" content={Astro.generator} />
       <title>612 Soft - Desarrollo Web</title>
+      <GoogleAnalytics/>
    </head>
    <body class="relative flex flex-col bg-white dark:bg-slate-950">
       <!-- <div class="absolute inset-0 -z-10 h-full w-full items-center px-5 py-24 bg-white [background:radial-gradient(125%_125%_at_50%_10%,#fff_40%,#63e_100%)] dark:[background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)]"/> -->
@@ -21,7 +23,10 @@ import Header from "src/components/Header.astro";
       <!-- <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
 		bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
 		dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div> -->
-      <div class="absolute top-0 z-[-2] h-screen w-screen bg-white dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+      <div
+         class="absolute top-0 z-[-2] h-screen w-screen bg-white dark:bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+      >
+      </div>
       <Header />
       <slot />
       <!-- <footer class="bg-gray-100 rounded-lg shadow m-4 dark:bg-gray-800/40">
@@ -32,15 +37,6 @@ import Header from "src/components/Header.astro";
 		</footer> -->
    </body>
 </html>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2MME37EWFP"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-2MME37EWFP');
-</script>
 <style is:global>
    :root {
       color-scheme: light dark;
